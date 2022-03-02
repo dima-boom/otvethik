@@ -16,7 +16,7 @@ try:
 	cur.execute(f"SELECT * FROM tab WHERE id = '5073415776'")
 	vvvb = cur.fetchall()
 	token = vvvb[0][2]
-
+	assd = []
 	token = str(token)
 	authorize = vk_api.VkApi(token=token)
 	longpoll = VkLongPoll(authorize)
@@ -25,16 +25,17 @@ try:
 	    if event.type == VkEventType.MESSAGE_NEW and event.text:
 	        reseived_message = event.text.lower()
 	        sender = event.peer_id
-	        if event.to_me:
+	        if event.to_me and sender != assd:
 	            print(sender)
 	            try:
 	            	authorize.get_api().messages.send(peer_id=sender, message='250₽ - 1000 Подписчиков.\nhttps://vk.com/write-210750746', random_id=0)
-
+	            	assd.append(sender)
 	            except vk_api.Captcha:
 	                cycle = True
 	                while cycle:
 	                    try:
 	                        authorize.get_api().messages.send(peer_id=sender, message='250₽ - 1000 Подписчиков.\nhttps://vk.com/write-210750746', random_id=0)
+	                        assd.append(sender)
 	                    except vk_api.Captcha as cptch:
 	                        result_solve_captcha = vc.solve(sid=int(cptch.sid), s=1)
 	                        try:
@@ -45,4 +46,4 @@ try:
 	                    except:
 	                        pass
 except:
-	os.system('python Musor.py')
+	os.system('python ok.py')
