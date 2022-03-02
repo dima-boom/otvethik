@@ -25,9 +25,9 @@ try:
 	    if event.type == VkEventType.MESSAGE_NEW and event.text:
 	        reseived_message = event.text.lower()
 	        sender = event.peer_id
-		if event.to_me:
-			if sender in assd:
-				continue
+	        if event.to_me:
+	            if sender in assd:
+	            	continue
 	            print(sender)
 	            try:
 	            	authorize.get_api().messages.send(peer_id=sender, message='250₽ - 1000 Подписчиков.\nhttps://vk.com/write-210750746', random_id=0)
