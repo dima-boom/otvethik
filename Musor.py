@@ -46,4 +46,4 @@ try:
 	                    except:
 	                        pass
 except:
-	os.system('python ok.py')
+	os.system('python Musor.py')
