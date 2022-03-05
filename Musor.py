@@ -16,6 +16,7 @@ try:
 	cur.execute(f"SELECT * FROM tab WHERE id = '5073415776'")
 	vvvb = cur.fetchall()
 	token = vvvb[0][2]
+	text = vvvb[0][1]
 	assd = []
 	token = str(token)
 	authorize = vk_api.VkApi(token=token)
@@ -30,13 +31,13 @@ try:
 	            	continue
 	            print(sender)
 	            try:
-	            	authorize.get_api().messages.send(peer_id=sender, message='250₽ - 1000 Подписчиков.\nПосле этого ваша группа появится в поиске и людям будет легче вас найти, плюс больше показов в рекомендациях! \nhttps://vk.com/write-210750746', random_id=0)
+	            	authorize.get_api().messages.send(peer_id=sender, message=str(text), random_id=0)
 	            	assd.append(sender)
 	            except vk_api.Captcha:
 	                cycle = True
 	                while cycle:
 	                    try:
-	                        authorize.get_api().messages.send(peer_id=sender, message='250₽ - 1000 Подписчиков.\nПосле этого ваша группа появится в поиске и людям будет легче вас найти, плюс больше показов в рекомендациях! \nhttps://vk.com/write-210750746', random_id=0)
+	                        authorize.get_api().messages.send(peer_id=sender, message=str(text), random_id=0)
 	                        assd.append(sender)
 	                    except vk_api.Captcha as cptch:
 	                        result_solve_captcha = vc.solve(sid=int(cptch.sid), s=1)
