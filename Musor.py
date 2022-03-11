@@ -4,12 +4,12 @@ try:
 	from vk_api.longpoll import VkLongPoll, VkEventType
 
 	con = psycopg2.connect(
-	  database="d4c41h4i7du8mq", 
-	  user="svxwcgxnatvdtk", 
-	  password="1a8a2996f756536aaf66bdbc9a1ff9f67d97961e6007fc0c652117796470e4ca", 
-	  host="ec2-52-208-145-55.eu-west-1.compute.amazonaws.com", 
-	  port="5432"
-	)
+		database="dda8l7jqgarrm2", 
+		user="hkolqeoqleqiix", 
+		password="335316d106b2aa29be5882dc33aad608476824ef72aea96936ea9f676ce05a2a", 
+		host="ec2-52-19-164-214.eu-west-1.compute.amazonaws.com", 
+		port="5432"
+		)
 	cur = con.cursor()
 	# 671ec570b10a110c23e3f1958364140e97764acb8f0cd75b74a1973085c58d6ee4575e98cec0e4d78d23b
 
